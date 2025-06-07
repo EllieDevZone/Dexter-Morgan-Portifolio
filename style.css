@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-/* Reset e estilo base */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +19,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
-
-    /* Fundo dinâmico com imagem e sobreposição */
-    background: url(28kH6S.jpg) no-repeat center center fixed;
+    background: url(backg.jpg) no-repeat center center fixed;
     background-size: cover;
     color: white;
     position: relative;
@@ -34,8 +32,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Sobreposição escura */
-    z-index: -1; /* Fica atrás do conteúdo */
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1; 
 }
 
 @keyframes backgroundFade {
@@ -47,7 +45,7 @@ body::before {
     }
 }
 
-/* Header */
+
 header {
     margin-top: 20px;
     position: fixed;
@@ -56,7 +54,7 @@ header {
     width: 100%;
     padding: 1rem 9%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px); /* Adiciona um efeito de desfoque no header */
+    backdrop-filter: blur(5px); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,23 +63,22 @@ header {
 }
 
 header:hover {
-    background: rgba(0, 0, 0, 0.8); /* Fica mais visível ao passar o mouse */
-}
+    background: rgba(0, 0, 0, 0.8); 
 
-/* Logo */
+
 .logo {
     font-size: 3rem;
-    color: red; /* Cor vibrante para contraste */
+    color: red; 
     font-weight: 800;
     cursor: pointer;
     transition: transform 0.5s ease;
 }
 
 .logo:hover {
-    transform: rotate(360deg) scale(1.2); /* Efeito de rotação criativo */
+    transform: rotate(360deg) scale(1.2); 
 }
 
-/* Navegação */
+
 nav a {
     font-size: 1.8rem;
     color: white;
@@ -98,7 +95,7 @@ nav a.active {
     transform: scale(1.1);
 }
 
-/* Botões */
+
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -119,7 +116,7 @@ nav a.active {
     box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
 }
 
-/* Seções */
+
 section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
@@ -130,7 +127,7 @@ section {
     text-align: center;
 }
 
-/* Texto da página inicial */
+
 .home h1 {
     font-size: 6rem;
     font-weight: 700;
@@ -179,9 +176,7 @@ section {
 }
 
 .home-img{
-
     border-radius: 50%;
-
 }
 
 .home-img img{
@@ -192,8 +187,7 @@ section {
     cursor: pointer;
     transition: 0.2s linear;
 }
+    
 span{
-
     color: red;
-
 }
