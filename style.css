@@ -1,193 +1,284 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
+:root {
+  --red-accent: rgba(255, 0, 0, 0.9);
+  --dark-red: #8B0000;
+  --text-light: #dddddd;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    background: url(backg.jpg) no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: url(28kH6S.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  position: relative;
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: -1; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-overlay);
+  z-index: -1; 
 }
-
-@keyframes backgroundFade {
-    0%, 100% {
-        background: rgba(0, 0, 0, 0.8);
-    }
-    50% {
-        background: rgba(0, 0, 0, 0.5);
-    }
-}
-
 
 header {
-    margin-top: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px); 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    transition: background 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background 0.3s ease;
 }
 
 header:hover {
-    background: rgba(0, 0, 0, 0.8); 
-
+  background: rgba(0, 0, 0, 0.8); 
+}
 
 .logo {
-    font-size: 3rem;
-    color: red; 
-    font-weight: 800;
-    cursor: pointer;
-    transition: transform 0.5s ease;
+  font-size: 2.5rem;
+  color: var(--red-accent);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 .logo:hover {
-    transform: rotate(360deg) scale(1.2); 
+  transform: rotate(360deg) scale(1.2);
 }
 
+nav {
+  display: flex;
+  transition: all 0.3s ease;
+}
 
 nav a {
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-    border-bottom: 3px solid transparent;
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 3rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
 }
 
 nav a:hover,
 nav a.active {
-    color: red;
-    border-bottom: 3px solid red;
-    transform: scale(1.1);
+  color: var(--red-accent);
+  border-bottom: 3px solid var(--red-accent);
+  transform: scale(1.1);
 }
 
 
-.btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background: linear-gradient(90deg, red, #ff4500);
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: white;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  z-index: 101;
 }
 
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
 section {
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  min-height: 100vh;
+  padding: 10rem 5% 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
 
 .home h1 {
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: white;
-}
-
-@keyframes textGlow {
-    to {
-        text-shadow: 0 0 20px red, 0 0 30px darkred;
-    }
-}
-
-.home h3 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #ff6347;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
 }
 
 .home p {
-    font-size: 1.6rem;
-    color: #dddddd;
-    max-width: 600px;
+  font-size: 1.6rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: linear-gradient(90deg, var(--red-accent), #ff4500);
+  border-radius: 4rem;
+  font-size: 1.4rem;
+  color: white;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 99, 71, 0.8);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 0.2rem solid darkred;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: transform 0.3s ease, background 0.3s ease;
-    color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.2rem solid var(--dark-red);
+  font-size: 2rem;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.3) translateY(-5px);
-    background: darkred;
-    color: black;
+  transform: scale(1.3) translateY(-5px);
+  background: var(--dark-red);
+  color: black;
 }
 
-.home-img{
-    border-radius: 50%;
+
+#dexter-name {
+  color: var(--red-accent);
+  display: inline-block;
+  min-width: 200px;
+  transition: opacity 0.5s ease;
 }
 
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
-    cursor: pointer;
-    transition: 0.2s linear;
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
+  color: var(--red-accent);
+  background: rgba(0, 0, 0, 0.3);
 }
-    
-span{
-    color: red;
+
+
+@media (max-width: 992px) {
+  html {
+    font-size: 55%;
+  }
+  
+  .home h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav{
+        position: fixed;
+        top: 80px;
+        left: 100%; 
+        width: 40%!important ;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        
+    } 
+
+  
+  
+  nav.active {
+    left: 0;
+  }
+  
+  nav a {
+    margin: 1.2rem 0;
+    font-size: 2rem;
+  }
+  
+  .home h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+  }
+  
+  .home p {
+    font-size: 1.4rem;
+    padding: 0 2rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+  
+  nav {
+    width: 60%;
+  }
 }
