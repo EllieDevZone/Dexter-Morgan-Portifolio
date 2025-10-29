@@ -1,4 +1,4 @@
-# Dexter Portfolio
+# Dexter Morgan Page 
 
 ![Preview do Portfolio](preview.jpg) 
 
@@ -12,17 +12,6 @@ Portfólio inspirado no personagem Dexter, com design moderno e efeitos especiai
 - Transições suaves e microinterações
 - Modo escuro padrão com toques de vermelho
 
-
-## 🎨 Personalização
-
-Altere estas variáveis no CSS para mudar o tema:
-```css
-:root {
-  --red-accent: rgba(255, 0, 0, 0.9); /* Cor principal */
-  --dark-red: #8B0000; /* Vermelho escuro */
-  --text-light: #dddddd; /* Cor do texto */
-}
-```
 
 ## 📱 Responsividade
 
